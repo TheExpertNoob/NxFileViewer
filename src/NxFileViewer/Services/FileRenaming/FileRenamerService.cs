@@ -222,7 +222,7 @@ public class FileRenamerService : IFileRenamerService
                     newFileName += staticText.Text;
                     break;
                 case DynamicTextPatternPart dynamicText:
-                    string partValue;
+                    string? partValue;
                     switch (dynamicText.Keyword)
                     {
                         case PatternKeyword.TitleId:
@@ -247,6 +247,9 @@ public class FileRenamerService : IFileRenamerService
                         case PatternKeyword.PatchNumber:
                             partValue = content.PatchNumber.ToString();
                             break;
+                        case PatternKeyword.DisplayVersion:
+                            partValue = content.NacpData?.DisplayVersionString.ToString();
+                            break;
                         case PatternKeyword.OnlineTitleName:
                             var onlineTitleInfo = await _cachedOnlineTitleInfoService.GetTitleInfoAsync(content.TitleId);
                             partValue = onlineTitleInfo != null ? onlineTitleInfo.Name : "NO_TITLE";
@@ -265,10 +268,10 @@ public class FileRenamerService : IFileRenamerService
                         case StringOperator.Untouched:
                             break;
                         case StringOperator.ToLower:
-                            partValue = partValue.ToLower();
+                            partValue = partValue?.ToLower();
                             break;
                         case StringOperator.ToUpper:
-                            partValue = partValue.ToUpper();
+                            partValue = partValue?.ToUpper();
                             break;
                         default:
                             throw new ArgumentOutOfRangeException($"Unknown operator «{dynamicText.StringOperator}».");
