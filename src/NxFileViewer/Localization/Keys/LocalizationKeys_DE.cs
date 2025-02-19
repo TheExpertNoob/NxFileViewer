@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using Emignatik.NxFileViewer.Utils.MVVM.Localization;
 using LibHac.Ncm;
 
 namespace Emignatik.NxFileViewer.Localization.Keys;
 
-public class LocalizationKeys_EN : LocalizationKeysBase, ILocalizationKeys
+public class LocalizationKeys_DE : LocalizationKeysBase, ILocalizationKeys
 {
     public override bool IsFallback => true;
     public override string DisplayName => "Deutsch";
@@ -76,7 +76,7 @@ public class LocalizationKeys_EN : LocalizationKeysBase, ILocalizationKeys
                                                        3. Im Verzeichnis «%UserProfile%\\.switch»
                                                    
                                                    Beim Start kann das Programm die Keydatei automatisch herunterladen, falls keine auf dem System gefunden wird.
-												   Die Keydatei wird im Verzeichnis der aktuellen Anwendung gespeichert.
+                                                   Die Keydatei wird im Verzeichnis der aktuellen Anwendung gespeichert.
                                                    """;
 
     public string SettingsView_ToolTip_TitleKeys => """
@@ -99,11 +99,11 @@ public class LocalizationKeys_EN : LocalizationKeysBase, ILocalizationKeys
 
     public string SettingsView_ToolTip_NczBlockLessCompression => """
                                                                   NSZ- oder XCZ-Dateien bestehen aus NCZ-Dateien, die NCA-komprimierte Dateien sind.
-																  NCZ-Dateien können ohne die Blockkomprimierungsmethode komprimiert werden, was effizienten zufälligen Lesezugriff unmöglich macht.
-																  Daher ist es bei großen Dateien, bei denen ein kleiner Teil am Ende gelesen werden muss, notwendig, den gesamten Stream zu dekomprimieren, um den gewünschten Teil zu erreichen.
-																  Große Dateien können daher lange zum Öffnen benötigen.
-																  Verwende vorzugsweise die Blockkomprimierung für große Dateien.
-																  Beachte, dass es, wenn du das Öffnen von blocklos komprimierten NCZ-Dateien nicht zulässt, keine Auswirkungen auf die Integritätsprüffunktionen hat.
+                                                                  NCZ-Dateien können ohne die Blockkomprimierungsmethode komprimiert werden, was effizienten zufälligen Lesezugriff unmöglich macht.
+                                                                  Daher ist es bei großen Dateien, bei denen ein kleiner Teil am Ende gelesen werden muss, notwendig, den gesamten Stream zu dekomprimieren, um den gewünschten Teil zu erreichen.
+                                                                  Große Dateien können daher lange zum Öffnen benötigen.
+                                                                  Verwende vorzugsweise die Blockkomprimierung für große Dateien.
+                                                                  Beachte, dass es, wenn du das Öffnen von blocklos komprimierten NCZ-Dateien nicht zulässt, keine Auswirkungen auf die Integritätsprüffunktionen hat.
                                                                   """;
 
     public string SettingsView_CheckBox_NczOpenBlocklessCompression => "Öffne NCZ-komprimierte Dateien ohne Blockkompression.";
@@ -111,8 +111,8 @@ public class LocalizationKeys_EN : LocalizationKeysBase, ILocalizationKeys
     public string SettingsView_CheckBox_IgnoreMissingDeltaFragments => "Fehlende Delta-Fragmente ignorieren";
     public string SettingsView_ToolTip_IgnoreMissingDeltaFragments => $"""
                                                                       Patch-Dateien können vollständige Update-Dateien und inkrementelle Update-Dateien (bekannt als {ContentType.DeltaFragment}) enthalten.
-																	  Diese Fragmente sind nicht zwingend erforderlich, um eine Anwendung zu aktualisieren, und werden manchmal absichtlich entfernt.
-																	  Aktiviere diese Option, wenn du fehlende {ContentType.DeltaFragment} bei der Integritätsprüfung ignorieren möchtest.
+                                                                      Diese Fragmente sind nicht zwingend erforderlich, um eine Anwendung zu aktualisieren, und werden manchmal absichtlich entfernt.
+                                                                      Aktiviere diese Option, wenn du fehlende {ContentType.DeltaFragment} bei der Integritätsprüfung ignorieren möchtest.
                                                                       """;
 
     public string SettingsView_Miscellaneous => "Sonstiges";
@@ -218,18 +218,18 @@ public class LocalizationKeys_EN : LocalizationKeysBase, ILocalizationKeys
     public string Title_FileInfo_Integrity => "Integrität";
     public string ToolTip_NcasIntegrity => $"""
                                            Die Integritätsprüfung besteht darin, die Integrität jeder NCA (oder NCZ) zu überprüfen.
-										   
-										   Das Ergebnis der Integritätsprüfung kann wie folgt aussehen:
-										   {NcasIntegrity_NoNca}: Keine NCA-Datei gefunden.
-										   {NcasIntegrity_Unchecked}: Integrität nicht geprüft.
-										   {NcasIntegrity_InProgress}: Integritätsprüfung läuft.
-										   {NcasIntegrity_Original}: Alle NCAs sind original (Signatur und Hash in Ordnung).
-										   {NcasIntegrity_Incomplete}: Alle NCAs sind original, aber einige fehlen.
-										   {NcasIntegrity_Modified}: Mindestens eine NCA ist modifiziert (Signatur nicht in Ordnung, aber Hash in Ordnung).
-										   {NcasIntegrity_Corrupted}: Mindestens eine NCA ist beschädigt (Hash ungültig).
-										   {NcasIntegrity_Error}: Ein Fehler ist während der Integritätsprüfung aufgetreten.
-										   
-										   Details zu jeder analysierten NCA findest du im Tab «Inhalt».
+                                           
+                                           Das Ergebnis der Integritätsprüfung kann wie folgt aussehen:
+                                           {NcasIntegrity_NoNca}: Keine NCA-Datei gefunden.
+                                           {NcasIntegrity_Unchecked}: Integrität nicht geprüft.
+                                           {NcasIntegrity_InProgress}: Integritätsprüfung läuft.
+                                           {NcasIntegrity_Original}: Alle NCAs sind original (Signatur und Hash in Ordnung).
+                                           {NcasIntegrity_Incomplete}: Alle NCAs sind original, aber einige fehlen.
+                                           {NcasIntegrity_Modified}: Mindestens eine NCA ist modifiziert (Signatur nicht in Ordnung, aber Hash in Ordnung).
+                                           {NcasIntegrity_Corrupted}: Mindestens eine NCA ist beschädigt (Hash ungültig).
+                                           {NcasIntegrity_Error}: Ein Fehler ist während der Integritätsprüfung aufgetreten.
+                                           
+                                           Details zu jeder analysierten NCA findest du im Tab «Inhalt».
                                            """;
 
     public string AvailableContents => "Inhalt:";
